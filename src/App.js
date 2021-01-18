@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Course from "./components/Course"
+class App extends React.Component {
+	render () {
+		return (
+			<div className="row">
+				<Course name="React JS" time="30h" free={true}>React JS very simple</Course>
+				<Course name="Angular 4x" time="55h" free={false}></Course>
+				<Course name="Node JS" time="30h" free={true}></Course>
+				<Course name="VueJS" time="20h" free="true"></Course>
+			</div>
+		);
+	}
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
 }
 
 export default App;
