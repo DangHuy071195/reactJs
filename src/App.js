@@ -1,16 +1,45 @@
 import './App.css';
+import React, {Component} from "react";
 import Course from "./components/Course"
-class App extends React.Component {
+import Lifecycle from "./components/Lifecycle"
+class App extends Component {
 	render () {
+		const items = [
+			{
+				name: "React JS",
+				time: "30h",
+				free: false,
+				desc: "React JS very simple"
+			},
+			{
+				name: "Vue JS",
+				time: "55h",
+				free: false,
+			},
+			{
+				name: "Node JS",
+				time: "37h",
+				free: true,
+			},
+			{
+				name: "Next JS",
+				time: "35h",
+				free: true,
+			},
+			
+		];
+		let elmCourse = items.map((item, index) => 
+			<Course key={index} name={item.name} time={item.time} free={item.free}>{item.desc}</Course>		)
+			elmCourse = null;
 		return (
 			<div className="row">
-				<Course name="React JS" time="30h" free={true}>React JS very simple</Course>
-				<Course name="Angular 4x" time="55h" free={false}></Course>
-				<Course name="Node JS" time="30h" free={true}></Course>
-				<Course name="VueJS" time="20h" free="true"></Course>
+				{elmCourse}
+				<Lifecycle />
 			</div>
 		);
 	}
+	
+
 
 }
 
